@@ -1,0 +1,93 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": ": Flujo de busqueda",
+        "description": "",
+        "id": "flujo-de-busqueda;:-flujo-de-busqueda",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8094498700,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "el usuario ingresa a la pagina de PCFactory",
+            "match": {
+              "location": "StepBusqueda.el_usuario_ingresa_a_la_pagina_de_PCFactory()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 273662200,
+              "error_message": "java.lang.NullPointerException\r\n\tat Bussines.selenium.AccionesWeb.InputText(AccionesWeb.java:72)\r\n\tat Page.InicioPO.insertarProducto(InicioPO.java:22)\r\n\tat StepDefinition.StepBusqueda.el_usuario_realiza_la_busqueda_del_producto(StepBusqueda.java:37)\r\n\tat ✽.And el usuario realiza la busqueda del producto \"Procesador\"(PCfactory.feature:6)\r\n",
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "el usuario realiza la busqueda del producto \"Procesador\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Procesador",
+                  "offset": 45
+                }
+              ],
+              "location": "StepBusqueda.el_usuario_realiza_la_busqueda_del_producto(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "el usuario selecciona el producto \"Intel® CPU Celeron G1820\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Intel® CPU Celeron G1820",
+                  "offset": 35
+                }
+              ],
+              "location": "StepBusqueda.el_usuario_selecciona_el_producto(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Se valida que el usuario haya seleccionado el producto \"Intel® CPU Celeron G1820\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Intel® CPU Celeron G1820",
+                  "offset": 56
+                }
+              ],
+              "location": "StepBusqueda.se_valida_que_el_usuario_haya_seleccionado_el_producto(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@flujo-feliz"
+          }
+        ]
+      }
+    ],
+    "name": "Flujo de Busqueda",
+    "description": "",
+    "id": "flujo-de-busqueda",
+    "keyword": "Feature",
+    "uri": "PCfactory.feature"
+  }
+]

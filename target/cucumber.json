@@ -1,0 +1,37 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": ": Flujo de busqueda",
+        "description": "",
+        "id": "flujo-de-busqueda;:-flujo-de-busqueda",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "el usuario ingresa a la pagina de PCFactory",
+            "match": {},
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@flujo-feliz"
+          }
+        ]
+      }
+    ],
+    "name": "Flujo de Busqueda",
+    "description": "",
+    "id": "flujo-de-busqueda",
+    "keyword": "Feature",
+    "uri": "PCfactory.feature"
+  }
+]
