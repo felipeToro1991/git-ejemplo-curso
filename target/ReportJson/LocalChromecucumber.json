@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8094498700,
+              "duration": 5605431200,
               "status": "passed"
             },
             "line": 5,
@@ -24,9 +24,8 @@
           },
           {
             "result": {
-              "duration": 273662200,
-              "error_message": "java.lang.NullPointerException\r\n\tat Bussines.selenium.AccionesWeb.InputText(AccionesWeb.java:72)\r\n\tat Page.InicioPO.insertarProducto(InicioPO.java:22)\r\n\tat StepDefinition.StepBusqueda.el_usuario_realiza_la_busqueda_del_producto(StepBusqueda.java:37)\r\n\tat ✽.And el usuario realiza la busqueda del producto \"Procesador\"(PCfactory.feature:6)\r\n",
-              "status": "failed"
+              "duration": 2475164100,
+              "status": "passed"
             },
             "line": 6,
             "name": "el usuario realiza la busqueda del producto \"Procesador\"",
@@ -43,14 +42,15 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 796890400,
+              "status": "passed"
             },
             "line": 7,
-            "name": "el usuario selecciona el producto \"Intel® CPU Celeron G1820\"",
+            "name": "el usuario selecciona el producto \"CPU Celeron G1820\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Intel® CPU Celeron G1820",
+                  "val": "CPU Celeron G1820",
                   "offset": 35
                 }
               ],
@@ -60,14 +60,15 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 359196900,
+              "status": "passed"
             },
             "line": 8,
-            "name": "Se valida que el usuario haya seleccionado el producto \"Intel® CPU Celeron G1820\"",
+            "name": "Se valida que el usuario haya seleccionado el producto \"CPU Celeron G1820\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Intel® CPU Celeron G1820",
+                  "val": "CPU Celeron G1820",
                   "offset": 56
                 }
               ],

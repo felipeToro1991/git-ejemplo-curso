@@ -9,25 +9,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class InicioPO extends Base{
+public class InicioPO {
 
-    AccionesWeb accion = new AccionesWeb();
-
-
-    public InicioPO(WebDriver driver) {
-        super(driver);
+    public InicioPO() {
+        PageFactory.initElements(DriverContext.getDriver(), this);
     }
+    @FindBy(xpath = "//*[@id='search']")
+    public WebElement inputTextBusqueda;
+    @FindBy(xpath = "//*[@id='search_btn']")
+    public WebElement btnBusqueda;
+    @FindBy(xpath = "//*[@id='seccion-banner-bajo']/a/img")
+    public WebElement imgBanner2;
 
-    public void insertarProducto(String producto) throws InterruptedException {
-        accion.InputText(producto,"inputBusqueda", "PCFactory");
+    public void insertarProducto(String producto){
+        inputTextBusqueda.sendKeys(producto);
     }
-
     public void clickBtnBuscar(){
-        accion.Click("btnBuscar", "PCFactory");
+        btnBusqueda.click();
     }
-
     public void clickBannerDos(){
-
+        imgBanner2.click();
     }
 
 
