@@ -5,6 +5,7 @@ import Bussines.bd.ConsultasMysql;
 import Bussines.constants.Navegador;
 import Bussines.drivers.DriverContext;
 import Bussines.drivers.DriverManager;
+import Bussines.excel.PcfactoryExcel;
 import Bussines.xml.LeerPasos;
 import Page.InicioPO;
 import Page.Producto;
@@ -18,6 +19,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.sql.Driver;
+import java.util.ArrayList;
 import java.util.List;
 
 public class StepBusqueda {
@@ -51,15 +53,29 @@ public class StepBusqueda {
 
     @Then("^Se valida que el usuario haya seleccionado el producto \"([^\"]*)\"$")
     public void se_valida_que_el_usuario_haya_seleccionado_el_producto(String arg1) {
+        PcfactoryExcel excel = new PcfactoryExcel();
         ConsultasMysql sql = new ConsultasMysql();
         Producto prod = new Producto();
         prod.mostrarTexto();
         String id = prod.extraerId();
         List<String> datos = prod.extraerTextos();
+        String[] datosExcel = new String[datos.size()];
         List<String> datos2 = sql.consultaProductos(id);
 
-
         Assert.assertTrue("Las listas no son iguales",datos.equals(datos2));
+
+
+
+        int i = 0;
+        for(String info: datos){
+            datosExcel[i] = info;
+            i++;
+        }
+
+        excel.excelPcfactory(datosExcel);
+
+
+
 
 
 

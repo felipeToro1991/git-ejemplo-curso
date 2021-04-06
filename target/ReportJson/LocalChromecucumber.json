@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "line": 4,
+        "line": 11,
         "name": ": Flujo de busqueda",
         "description": "",
         "id": "flujo-de-busqueda;:-flujo-de-busqueda",
@@ -12,10 +12,10 @@
         "steps": [
           {
             "result": {
-              "duration": 5605431200,
+              "duration": 7555677800,
               "status": "passed"
             },
-            "line": 5,
+            "line": 12,
             "name": "el usuario ingresa a la pagina de PCFactory",
             "match": {
               "location": "StepBusqueda.el_usuario_ingresa_a_la_pagina_de_PCFactory()"
@@ -24,15 +24,15 @@
           },
           {
             "result": {
-              "duration": 2475164100,
+              "duration": 1255538400,
               "status": "passed"
             },
-            "line": 6,
-            "name": "el usuario realiza la busqueda del producto \"Procesador\"",
+            "line": 13,
+            "name": "el usuario realiza la busqueda del producto \"Disco SSD\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Procesador",
+                  "val": "Disco SSD",
                   "offset": 45
                 }
               ],
@@ -42,15 +42,15 @@
           },
           {
             "result": {
-              "duration": 796890400,
+              "duration": 949603800,
               "status": "passed"
             },
-            "line": 7,
-            "name": "el usuario selecciona el producto \"CPU Celeron G1820\"",
+            "line": 14,
+            "name": "el usuario selecciona el producto \"Cofre SSD M.2 SATA\"",
             "match": {
               "arguments": [
                 {
-                  "val": "CPU Celeron G1820",
+                  "val": "Cofre SSD M.2 SATA",
                   "offset": 35
                 }
               ],
@@ -60,15 +60,15 @@
           },
           {
             "result": {
-              "duration": 359196900,
+              "duration": 836451000,
               "status": "passed"
             },
-            "line": 8,
-            "name": "Se valida que el usuario haya seleccionado el producto \"CPU Celeron G1820\"",
+            "line": 15,
+            "name": "Se valida que el usuario haya seleccionado el producto \"Cofre SSD M.2 SATA\"",
             "match": {
               "arguments": [
                 {
-                  "val": "CPU Celeron G1820",
+                  "val": "Cofre SSD M.2 SATA",
                   "offset": 56
                 }
               ],
@@ -79,8 +79,8 @@
         ],
         "tags": [
           {
-            "line": 3,
-            "name": "@flujo-feliz"
+            "line": 10,
+            "name": "@flujo-feliz2"
           }
         ]
       }

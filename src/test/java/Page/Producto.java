@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Producto {
     String nombre;
@@ -41,7 +40,7 @@ public class Producto {
         System.out.println(precioOferta=labelPrecioOferta.getText());
         System.out.println(idProducto=labelIdProducto.getText());
     }
-    public List<String> extraerTextos(){
+    public ArrayList<String> extraerTextos(){
         ArrayList<String> datos = new ArrayList();
             datos.add(idProducto);
             datos.add(nombre);
