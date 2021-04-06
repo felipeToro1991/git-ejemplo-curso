@@ -43,7 +43,7 @@ public class ConsultasMysql extends Mysql{
         List<String> datos = null;
         ResultSet rs;
 
-        String query = "    SELECT * FROM `productos` WHERE `id_producto` = '"+id_producto +"'";
+        String query = "SELECT * FROM `productos` WHERE `id_producto` = '"+id_producto +"'";
 
         try {
             Statement stmt = con.createStatement();
@@ -79,6 +79,30 @@ public class ConsultasMysql extends Mysql{
         return datos;
     }
 
+    public String extraerId(String nombreProducto){
+        String idproducto = "";
+        ResultSet rs;
+
+        String query = "SELECT id_producto FROM `productos` WHERE `nombre_producto` = '"+nombreProducto +"'";
+
+        try {
+            Statement stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+
+            if(rs != null){
+            while (rs.next()){
+                    idproducto= rs.getString("id_producto");
+                }
+            }
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
+        return idproducto;
+    }
 
 
 
