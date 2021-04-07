@@ -13,9 +13,9 @@ public class Mysql {
 
     public Connection getConenection(){
         try{
-            String url = "jdbc:mysql://localhost:3306/pcfactory";
+            String url = "jdbc:mysql://localhost/pcfactory";
             String user = "root";
-            String pass = "";
+            String pass = "admin";
 
             //Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url,user,pass);
