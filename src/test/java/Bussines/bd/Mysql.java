@@ -1,5 +1,7 @@
 package Bussines.bd;
 
+import Bussines.reportes.EstadoPrueba;
+import Bussines.reportes.PdfBciReports;
 import org.junit.Assert;
 
 import java.sql.Connection;
@@ -19,9 +21,11 @@ public class Mysql {
 
             //Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url,user,pass);
+            PdfBciReports.addReport("Conexion a Mysql", "Validacion a la conexion BD de Mysql", EstadoPrueba.PASSED, false);
             return conn;
 
         }catch (SQLException e){
+            PdfBciReports.addReport("Conexion a Mysql", "Validacion a la conexion BD de Mysql", EstadoPrueba.FAILED, true);
             Assert.fail("Error de conexion a MySql, se detenta en: "+e.getMessage());
             e.printStackTrace();
         }

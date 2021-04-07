@@ -3,7 +3,7 @@
 <Pasos>
     <Ventana name="ConfiguracionData">
         <paso name="Navegador" By= "Id" Path="Chrome" description=""/>
-        <paso name="Url" By ="Id" Path="https://www.pcfactory.cl/" description=""/>
+        <paso name="Url" By ="Id" Path="https://www.falabella.com/" description=""/>
     </Ventana>
     <Ventana name="Inicio">
         <paso name="inputBusqueda" By= "Xpath" Path="//*[@id='search']" description=""/>

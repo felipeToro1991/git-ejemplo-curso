@@ -4,22 +4,18 @@ package StepDefinition;
 import Bussines.bd.ConsultasMysql;
 import Bussines.constants.Navegador;
 import Bussines.drivers.DriverContext;
-import Bussines.drivers.DriverManager;
 import Bussines.excel.PcfactoryExcel;
+import Bussines.reportes.EstadoPrueba;
+import Bussines.reportes.PdfBciReports;
 import Bussines.xml.LeerPasos;
 import Page.InicioPO;
 import Page.Producto;
 import Page.ResultadoBusqueda;
-import cucumber.api.java.ca.I;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-
-import java.sql.Driver;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StepBusqueda {
@@ -33,6 +29,14 @@ public class StepBusqueda {
     public void el_usuario_ingresa_a_la_pagina_de_PCFactory() {
         List<String> url = xml.getxmlSucursalVirtual("Url", "PCFactory");
         DriverContext.setUp(Navegador.Chrome, url.get(1));
+        String urlWeb = DriverContext.getDriver().getCurrentUrl();
+        if(urlWeb.equals(url)){
+            PdfBciReports.addWebReportImage("Levantamiento de navegador", "levantamiento de navegador en la pagina :"+url, EstadoPrueba.PASSED, false);
+        }else{
+            PdfBciReports.addWebReportImage("Levantamiento de navegador", "levantamiento de navegador en la pagina no fue correcto se cargo la URL:"+urlWeb, EstadoPrueba.FAILED, true);
+        }
+
+
     }
 
 
@@ -41,6 +45,7 @@ public class StepBusqueda {
     public void el_usuario_realiza_la_busqueda_del_producto(String producto){
         inicioPO = new InicioPO();
         inicioPO.insertarProducto(producto);
+        PdfBciReports.addWebReportImage("Pagina principal con ingreso del producto", "Ingreso del producto", EstadoPrueba.PASSED, false);
         inicioPO.clickBtnBuscar();
 
     }
@@ -48,6 +53,7 @@ public class StepBusqueda {
     @And("^el usuario selecciona el producto \"([^\"]*)\"$")
     public void el_usuario_selecciona_el_producto(String arg1) {
         ResultadoBusqueda result = new ResultadoBusqueda();
+        PdfBciReports.addWebReportImage("Pagina de resultado", "Resultado de la busqueda del producto: "+arg1, EstadoPrueba.PASSED, false);
         result.SeleccionarProducto(arg1);
     }
 
@@ -56,6 +62,7 @@ public class StepBusqueda {
         PcfactoryExcel excel = new PcfactoryExcel();
         ConsultasMysql sql = new ConsultasMysql();
         Producto prod = new Producto();
+        PdfBciReports.addWebReportImage("Pagina del producto", "Extraccion de informacion del producto", EstadoPrueba.PASSED, false);
         prod.mostrarTexto();
         String id = prod.extraerId();
         List<String> datos = prod.extraerTextos();
@@ -63,6 +70,12 @@ public class StepBusqueda {
         List<String> datos2 = sql.consultaProductos(id);
 
         Assert.assertTrue("Las listas no son iguales",datos.equals(datos2));
+
+        for(int i = 0; i < datos.size();i++){
+            PdfBciReports.addTextValidate("Validacion textos del producto", datos.get(i), datos2.get(i), false);
+        }
+
+
 
 
 
