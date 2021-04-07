@@ -16,8 +16,7 @@ public class LeerPasos {
 	public List<String> getxmlSucursalVirtual(String NombrePaso, String Plataforma)
 	{
 		String RutaArchivo = "DataXml/"+Plataforma+".xml";
-		List<String> List = getxml(NombrePaso, RutaArchivo);
-		return List;
+		return getxml(NombrePaso, RutaArchivo);
 	}
 
 
